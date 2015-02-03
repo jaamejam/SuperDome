@@ -1,0 +1,475 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>README</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+/* 
+   This document has been created with Marked.app <http://markedapp.com>, Copyright 2011 Brett Terpstra
+   Please leave this notice in place, along with any additional credits below.
+   ---------------------------------------------------------------
+   Some simple Github-like styles, with syntax highlighting CSS via Pygments (requires custom processor).
+   via https://github.com/alampros/Docter
+*/
+html {
+	margin:0;
+	padding:1em;
+}
+body{
+    -webkit-font-smoothing: antialiased;
+	font: 13.34px helvetica,arial,freesans,clean,sans-serif;
+	line-height: 1.4em;
+	color: #333;
+	border: none;
+	line-height: 1.5;
+	margin: 0 auto;
+    max-width: 900px; 
+	text-align:left;
+	color:black;
+    background:#fff;
+}
+
+@media screen {
+    #wrapper { padding:9px; background:#F8F8F8;	border:1px solid #E9E9E9;}
+    body.inverted, .inverted #wrapper {
+        color: #eee;
+        background:#333;
+        border-color:#555
+    }
+    .inverted h2 {
+        border-color:#555
+    }
+}
+h1 {
+	font-size: 170%;
+	border-top: 4px solid #aaa;
+	padding-top: .5em;
+	margin-top: 1.5em;
+}
+
+h1:first-child {
+	margin-top: 0 !important;
+	padding-top: .25em !important;
+	border-top: none !important;
+}
+
+h2 {
+	font-size: 150%;
+	margin-top: 1.5em;
+	border-top: 4px solid #e0e0e0;
+	padding-top: .5em;
+}
+
+h3 {
+	margin-top: 1em;
+}
+
+br+br {
+	line-height:0;
+	height:0;
+	display:none;
+}
+
+p {
+	margin: 1em 0!important;
+	line-height: 1.5em!important;
+}
+
+pre, code {
+    font: 12px 'Bitstream Vera Sans Mono','Courier',monospace;
+}
+pre {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.0664062) 0px 1px 2px 0px inset;
+    background-color: #EEE;
+    border: #ddd 1px solid;
+    color: #444;
+    display: block;
+    margin: 12px 0;
+    overflow: auto;
+    padding: 5px;
+    white-space: pre;
+    max-width:100%;
+    overflow:auto;
+}
+code {
+    background-color: ghostWhite;
+    color: #444!important;
+    padding: 0 .2em;
+    border: 1px solid #DEDEDE;
+}
+pre code {
+    padding: 0!important;
+    font-size: 12px!important;
+    background-color: #EEE!important;
+    border: none!important;
+    overflow:visible;
+}
+a, a code {
+	color: #4183C4;
+	text-decoration:none;
+}
+
+table td {
+	border-bottom: 1px solid #DDD!important;
+	padding: .2em 1em!important;
+}
+
+.shadow{
+	-webkit-box-shadow:0 5px 15px #000;
+	-moz-box-shadow:0 5px 15px #000;
+	box-shadow:0 5px 15px #000;		
+}
+
+
+.c{color:#998;font-style:italic;}
+.err{color:#a61717;background-color:#e3d2d2;}
+.k{font-weight:bold;}
+.o{font-weight:bold;}
+.cm{color:#998;font-style:italic;}
+.cp{color:#999;font-weight:bold;}
+.c1{color:#998;font-style:italic;}
+.cs{color:#999;font-weight:bold;font-style:italic;}
+.gd{color:#000;background-color:#fdd;}
+.gd .x{color:#000;background-color:#faa;}
+.ge{font-style:italic;}
+.gr{color:#a00;}
+.gh{color:#999;}
+.gi{color:#000;background-color:#dfd;}
+.gi .x{color:#000;background-color:#afa;}
+.go{color:#888;}
+.gp{color:#555;}
+.gs{font-weight:bold;}
+.gu{color:#800080;font-weight:bold;}
+.gt{color:#a00;}
+.kc{font-weight:bold;}
+.kd{font-weight:bold;}
+.kn{font-weight:bold;}
+.kp{font-weight:bold;}
+.kr{font-weight:bold;}
+.kt{color:#458;font-weight:bold;}
+.m{color:#099;}
+.s{color:#d14;}
+.na{color:#008080;}
+.nb{color:#0086B3;}
+.nc{color:#458;font-weight:bold;}
+.no{color:#008080;}
+.ni{color:#800080;}
+.ne{color:#900;font-weight:bold;}
+.nf{color:#900;font-weight:bold;}
+.nn{color:#555;}
+.nt{color:#000080;}
+.nv{color:#008080;}
+.ow{font-weight:bold;}
+.w{color:#bbb;}
+.mf{color:#099;}
+.mh{color:#099;}
+.mi{color:#099;}
+.mo{color:#099;}
+.sb{color:#d14;}
+.sc{color:#d14;}
+.sd{color:#d14;}
+.s2{color:#d14;}
+.se{color:#d14;}
+.sh{color:#d14;}
+.si{color:#d14;}
+.sx{color:#d14;}
+.sr{color:#009926;}
+.s1{color:#d14;}
+.ss{color:#990073;}
+.bp{color:#999;}
+.vc{color:#008080;}
+.vg{color:#008080;}
+.vi{color:#008080;}
+.il{color:#099;}
+
+.poetry pre {
+    font-family:Georgia, Garamond, serif !important;
+    font-style:italic;
+    font-size:110% !important;
+    line-height:1.6em;
+    display:block;
+    margin-left:1em;
+}
+
+.poetry pre code {
+    font-family:Georgia, Garamond, serif !important;
+}
+
+sup,sub,a.footnote {
+	font-size: 1.4ex;
+	height: 0;
+	line-height: 1;
+	vertical-align: super;
+	position: relative;
+}
+
+@media print {
+    body {
+        background:#fff;
+    }
+    #wrapper {
+        background: #fff;
+        border:none;
+    }
+    code {
+        background-color: #fff;
+        color: #444!important;
+        padding: 0 .2em;
+        border: 1px solid #DEDEDE;
+    }
+    pre code {
+        padding: 0!important;
+        font-size: 12px!important;
+        background-color: #fff!important;
+        border: none!important;
+        overflow:visible;
+    }
+    pre {
+        background: #fff;
+        white-space: pre-wrap;
+        white-space: pre-line;
+    }
+}
+</style>
+
+</head>
+<body class="normal">
+  <div id="wrapper">
+
+
+<h1>Mobius WordPress Theme</h1>
+
+<h2>About</h2>
+
+<p><strong>Theme Information</strong>: <a href="http://www.simplethemes.com/wordpress-themes/theme/mobius" title="Mobius WordPress Theme Info">simplethemes.com/wordpress-themes/theme/mobius</a></p>
+
+<p><strong>Live Demo</strong>: <a href="http://www.simplethemes.com/wordpress-themes/demo/mobius" title="Mobius WordPress Theme Demo">simplethemes.com/wordpress-themes/demo/mobius</a></p>
+
+<p><strong>Changelog</strong>: <a href="http://www.simplethemes.com/wordpress-themes/changelog/mobius" title="Mobius WordPress Theme Changelog">simplethemes.com/wordpress-themes/changelog/mobius</a></p>
+
+<h2>Installation &amp; Basic Setup</h2>
+
+<h4>Updates</h4>
+
+<p>Mobius may be used as a standalone theme or as a <strong>parent theme</strong> alongside of a <strong>child theme</strong> (included in your download).  </p>
+
+<p>If you choose to use Mobius as-is, automatic updates will be disabled. This is to ensure that you do not lose any of your customizations. If you do, however plan on making customizations to the CSS, we recommend setting up Mobius as a <strong>parent theme</strong>.</p>
+
+<p>To do this, install the sample <strong>mobius-child</strong> theme included in your download package. Set the Preset Style to &quot;Child Theme&quot; mode and follow the instructions in the child theme style.css file. See the accompanying functions.php file for advanced layout customizations.</p>
+
+<h3>Formatting Tips</h3>
+
+<p>WordPress has its fair share of quirks. If you find that WordPress auto paragraph formatting (wpautop) is getting in the way of your markup, simply add a custom field to your Page or Post named &quot;wpautop&quot; with a value of &quot;false&quot;.</p>
+
+<h3>Page Titles</h3>
+
+<p>Mobius has a Designer Page template which will hide the Page title and sidebar. If you want to just hide the title of a Page or Post, simply create a custom field named &quot;hidetitle&quot; and set the value to &quot;true&quot;.</p>
+
+<h2>Shortcodes</h2>
+
+<p>Mobius has several built in shortcodes. You can see them in action on the <a href="http://demos.simplethemes.com/mobius/features/useful-shortcodes">shortcodes demo page</a>.</p>
+
+<h3>Callouts</h3>
+
+<p>A callout is (by default) a rounded cornered styled inset box. It has two arguments:</p>
+
+<ul>
+<li><strong>align</strong> - aligns the callout left, right, or center</li>
+<li><strong>width</strong> - Only use this parameter if you must. Defined widths will not scale properly on all devices. Instead, consider embedding them in one of the column shortcodes.</li>
+</ul>
+
+<!---->
+
+<pre><code>[callout align=&quot;center&quot; width=&quot;400&quot;]
+This is a 400px centered callout box
+[/callout]
+
+[callout align=&quot;left&quot; width=&quot;200&quot;]
+This is a 200px left aligned callout box
+[/callout]
+
+[callout align=&quot;right&quot; width=&quot;100&quot;]
+This is a 100px right aligned callout box
+[/callout]
+
+[callout]
+This is a callout that will expand the entire width of its parent container.
+[/callout]
+</code></pre>
+
+<hr>
+
+<h3>Fluid Columns</h3>
+
+<p>You&#39;ve seen these before. The fractional shortcode combinations allow you to insert scalable columns into your content. The only rule here is, the last column must have a suffix of &#39;_last&#39;. See the example below.</p>
+
+<pre><code>// Three Columns Example
+[one_third]
+Column One - Add anything you want here
+[/one_third]
+
+[one_third]
+Column Two - Add anything you want here
+[/one_third]
+
+[one_third_last]
+Column Three - Add anything you want here
+[/one_third_last]
+</code></pre>
+
+<p>Available Options – Up to 6 columns</p>
+
+<ul>
+<li>one_third</li>
+<li>two_thirds</li>
+<li>one_half</li>
+<li>one_fourth</li>
+<li>three_fourths</li>
+<li>one_fifth</li>
+<li>two_fifth</li>
+<li>three_fifth</li>
+<li>four_fifth</li>
+<li>one_sixth</li>
+<li>five_sixth</li>
+</ul>
+
+<hr>
+
+<h3>Cross-Browser CSS3 Buttons</h3>
+
+<p>Tested in IE7,IE8,IE9,Webkit, and Mozilla browsers.
+<a href="http://demos.simplethemes.com/mobius/button-styles">Preview all colors and sizes</a></p>
+
+<pre><code>[button align=&quot;center&quot; color=&quot;white&quot; size=&quot;small&quot; link=&quot;http://www.simplethemes.com&quot;]Small Button[/button]
+</code></pre>
+
+<hr>
+
+<h3>Tabs</h3>
+
+<p>You can create tabs content within your content as well. Each tab needs a unique id (identifier) in order to work.</p>
+
+<pre><code>[tabgroup]
+[tab title=&quot;Tab 1&quot; id=&quot;t1&quot;]Tab 1 content[/tab]
+[tab title=&quot;Tab 2&quot; id=&quot;t2&quot;]Tab 2 content[/tab]
+[tab title=&quot;Tab 3&quot; id=&quot;t3&quot;]Tab 3 content[/tab]
+[/tabgroup]
+</code></pre>
+
+<hr>
+
+<h3>Accordion Toggles</h3>
+
+<p><a href="http://demos.simplethemes.com/smpl/documentation#gist-1142632">See them in action here.</a></p>
+
+<pre><code>[toggle title=&quot;Button text One&quot;]
+Toggle Content One
+[/toggle]
+
+[toggle title=&quot;Button Text Two&quot;]
+Toggle Content Two
+[/toggle]
+
+[toggle title=&quot;Button Text Three&quot;]
+Toggle Content Three
+[/toggle]
+</code></pre>
+
+<hr>
+
+<h3>Lightbox</h3>
+
+<p>Inserts a lightbox image or video link.</p>
+
+<p>Parameters:</p>
+
+<ul>
+<li>href // URL to load</li>
+<li>height // numeric</li>
+<li>width // numeric</li>
+<li>iframe // boolean</li>
+</ul>
+
+<h5>Simple Image Example:</h5>
+
+<pre><code>[lightbox href=&quot;http://www.yourdomain.com/path/to/img.jpg&quot; title=&quot;My Image&quot;]Image[/lightbox]
+</code></pre>
+
+<h5>Simple YouTube Example</h5>
+
+<pre><code>[lightbox href=&quot;http://www.youtube.com/watch?v=oHg5SJYRHA0&quot; width=&quot;640&quot; height=&quot;480&quot; title=&quot;YouTube&quot;]Video[/lightbox]
+</code></pre>
+
+<h5>YouTube (API) Example</h5>
+
+<pre><code>[lightbox href=&quot;http://www.youtube.com/embed/oHg5SJYRHA0?hd=1&amp;controls=0&amp;autoplay=1&quot; iframe=&quot;true&quot; width=&quot;710&quot; height=&quot;400&quot; title=&quot;YouTube&quot;]YouTube API Example[/lightbox]
+</code></pre>
+
+<p><a href="http://code.google.com/apis/youtube/player_parameters.html">YouTube API</a></p>
+
+<hr>
+
+<h3>Latest Posts</h3>
+
+<p>Insert a list of your latest posts from specified category(s) into any page with optional thumbnail and excerpt.</p>
+
+<pre><code>[latest excerpt=&quot;true&quot; thumbs=&quot;true&quot; width=&quot;50&quot; height=&quot;50&quot; num=&quot;5&quot; cat=&quot;8,10,11&quot;]
+</code></pre>
+
+<hr>
+
+<h3>Related Posts</h3>
+
+<p>Insert a list of related (tagged) posts.</p>
+
+<pre><code>[related_posts]
+</code></pre>
+
+<hr>
+
+<h3>Clearing</h3>
+
+<p>If you ever need to clear an mobius, you can use the “clear” shortcode below.</p>
+
+<pre><code>[clear]
+</code></pre>
+
+<hr>
+
+<h3>Clear with Horizontal line:</h3>
+
+<p>Similar to “clear”, this does the same thing but adds a horizontal line below.</p>
+
+<pre><code>[clearline]
+</code></pre>
+
+<hr>
+
+<h2>Layout Customization Hooks</h2>
+
+<p>You can find a list of these hookable actions and functions throughout functions.php:</p>
+
+<ul>
+<li><strong>st<em>above</em>header</strong> // Hook to add content before header</li>
+<li><strong>st<em>header</em>open</strong> // Opening header tags</li>
+<li><strong>st<em>header</em>extras</strong> // Additional content to be added to the header</li>
+<li><strong>st_logo</strong> // Override the theme logo function(s)</li>
+<li><strong>st<em>header</em>close</strong> // Closing Header tags</li>
+<li><strong>st<em>below</em>header</strong> // Hook to add content after header</li>
+<li><strong>st_navbar</strong> // Opening navigation mobius and WP3 menus</li>
+<li><strong>st<em>before</em>content</strong> // Hook to add content before content</li>
+<li><strong>st<em>after</em>content</strong> // Hook to add content after the content</li>
+<li><strong>st<em>before</em>comments</strong> // Hook to add content before comments</li>
+<li><strong>st<em>after</em>comments</strong> // Hook to add content after comments</li>
+<li><strong>st<em>before</em>footer</strong> // Hook to add content before the footer</li>
+<li><strong>st_footer</strong> // The footer (includes sidebar-footer.php)</li>
+<li><strong>st_footernav</strong> // Footer navigation menus</li>
+<li><strong>st<em>after</em>footer</strong> // Hook to add content after the footer</li>
+</ul>
+
+
+    </div>
+</body>
+</html>

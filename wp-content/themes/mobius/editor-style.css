@@ -1,0 +1,623 @@
+/*
+ * Example styles for use in the visual editor.
+ *
+ * Two types of styles can be defined here: general styles to make the editor look
+ * more like the theme and CSS classes that can be selected by the user.
+ *
+ * @package TinyMCE Kit
+ *
+ * Released under the GPL v.2, http://www.gnu.org/copyleft/gpl.html
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+ 
+
+/**
+ * Example of general styles for the editor
+ *
+ * If you're styling the image caption, in the editor it's in 
+ * <dl.wp-caption> <dt.wp-caption-dt> <dd.wp-caption-dd> structure.
+ */
+html .mceContentBody,html body#tinymce {font: 15px/24px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif !important;}
+
+img {margin: 5px 10px;}
+
+a:link,a:visited,a:hover {
+	color: #0041f4;
+}
+
+
+ul.captionlist,ul.captionlist li ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul.captionlist li li {
+	margin: 0;
+	line-height: 1.5em;
+}
+
+ul.captionlist li {
+	list-style: none;
+	line-height: 16px;
+	padding: 2px 0px 2px 0px;
+	list-style-position: outside;
+	font-size: 1em;
+	font-weight: bold;
+	background-image: none;
+}
+
+ul.captionlist li li,dt {
+	padding: 0;
+	color: #747474;
+	font-weight: normal;
+	font-size: .9em;
+}
+
+ul.check li {
+	list-style: none;
+	line-height: 16px;
+	padding: 2px 0px 2px 20px;
+	background: url(./images/icons/check.png) no-repeat left .19em;
+	list-style-position: outside;
+	font-size: 1em;
+}
+
+ul.check li li,dl {
+	background: none;
+	padding: 0px 0px 0px 0px;
+}
+
+ul.check a {
+	text-decoration: underline;
+	padding: 1px;
+}
+
+ul.check a:hover {
+	text-decoration: none;
+	padding: 1px;
+}
+
+
+
+/**
+ * Example of styles that will be selectable by the user.
+ *
+ * The class names have to match the $classes array in tinymce-kit.php
+ * and the styles must also be defined in your theme.
+ *
+ * These classes are applied either to the <p> tag if the whole patagraph is selected
+ * or to a <span> tag if only some text is selected. For best results they have
+ * to contain only "inline" styling, like color, font, text-decoration, etc.
+ */
+ 
+ h1.bigheading,h2.subheading {
+	text-align: center;
+	font-size: 42px;
+	margin: 0;
+	padding: 0;
+	line-height: 110%;
+	color: #000;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+h2.subheading {color: #333;font-size: 38px;margin-bottom: 20px;}
+h2.subheading span {color: #a8a8a8;}
+
+ul.left,
+ul.right,
+ul.left li,
+ul.right li {
+	list-style: none;
+	line-height: 150%;
+	font-size: 12px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	margin-bottom: 20px;
+	margin-top: 10px;
+	color: #575757;
+}
+ul.left {
+	float: left;
+	width: 280px;
+	font-size: 12px;
+}
+ul.right {
+	float: right;
+	width: 280px;
+}
+
+ul.right span,
+ul.left span {
+	display: block;
+	padding-left: 30px;
+	color: #000;
+	font: bold 16px/27px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+li.info {
+	background: url(./images/icons/info.png) no-repeat left 2px;
+}
+li.star {
+	background: url(./images/icons/star.png) no-repeat left 2px;
+}
+li.idea {
+	background: url(./images/icons/lightbulb.png) no-repeat left 2px;
+}
+li.search {
+	background: url(./images/icons/search.png) no-repeat left 2px;
+}
+
+.cta {
+	margin: 0px auto 20px auto;
+	padding: 10px 10px 20px 10px;
+	background-color: #fff;
+	border: 1px solid #e0e0e0;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	border-radius:8px;
+	clear: both;
+}
+.cta p {
+	margin: 0;
+	padding: 0;
+}
+.cta h3 {
+	font-size: 26px;
+	margin: 0px 0px 10px 0px;
+	background: none;
+	border-bottom: 1px solid #e4e4e4;
+}
+
+.cta.nostyle {
+	background:none;
+	border: none;
+}
+
+
+
+h2 { font-size: 2em; margin-bottom: 0.25em;letter-spacing: -1px;line-height: 100%;margin-top: 0px;}
+
+h3 { font-size: 1.6em; line-height: 1; margin-bottom: 0.25em;line-height: 100%;margin-top: 0px;}
+
+h4 { font-size: 1.4em; line-height: 1; margin-bottom: 0.25em; font-weight: bold;line-height: 100%;margin-top: 0px;}
+
+h5 { font-size: 1.4em; margin-bottom: 0.5em;font-weight: normal;font-style: normal;line-height: 100%;margin-top: 0px;}
+
+h6 { font-size: 1.2em;margin-bottom: 0.5em;  }
+
+h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover {
+	text-decoration: none;
+}
+
+
+/* Text elements
+
+-------------------------------------------------------------- */
+ul, ol {padding: 0 0 1em 1.5em;margin: 0;}
+ul { list-style-type: disc;}
+ol { list-style-type: decimal; }
+dl { margin: 0 0 1.5em 0; }
+dl dt { font-weight: bold; }
+dl dd { margin-left: 1.5em; }
+li {line-height: 135%;}
+
+/*
+ * Example styles for use in the visual editor.
+ *
+ * Two types of styles can be defined here: general styles to make the editor look
+ * more like the theme and CSS classes that can be selected by the user.
+ *
+ * @package TinyMCE Kit
+ *
+ * Released under the GPL v.2, http://www.gnu.org/copyleft/gpl.html
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+ 
+
+/**
+ * Example of general styles for the editor
+ *
+ * If you're styling the image caption, in the editor it's in 
+ * <dl.wp-caption> <dt.wp-caption-dt> <dd.wp-caption-dd> structure.
+ */
+
+img {margin: 5px 10px;}
+
+p {margin: 0.5em 0 1.5em;}
+
+h1 { color: #000;font-family: Arial, Helvetica, Geneva, sans-serif;}
+
+h2 { color: #333;font-family: Arial, Helvetica, Geneva, sans-serif;}
+
+h3 { color: #707070;font-family: Arial, Helvetica, Geneva, sans-serif;}
+
+h4 { color: #565656;font-family: Arial, Helvetica, Geneva, sans-serif;}
+
+h5 { color: #747474;font-family: Arial, Helvetica, Geneva, sans-serif;}
+
+h6 { color: #959595;font-family: Arial, Helvetica, Geneva, sans-serif;}
+
+
+hr {border:0;border-bottom:1px solid #ccc;display: block;clear: both;padding: 5px 0px;}
+
+ul.check li {
+	list-style: none;
+	line-height: 16px;
+	padding: 2px 0px 2px 20px;
+	background: url(./images/icons/check.png) no-repeat left .19em;
+	list-style-position: outside;
+	font-size: 1em;
+}
+
+
+/**
+ * Example of styles that will be selectable by the user.
+ *
+ * The class names have to match the $classes array in tinymce-kit.php
+ * and the styles must also be defined in your theme.
+ *
+ * These classes are applied either to the <p> tag if the whole patagraph is selected
+ * or to a <span> tag if only some text is selected. For best results they have
+ * to contain only "inline" styling, like color, font, text-decoration, etc.
+ */
+ 
+ h1.bigheading,h2.subheading {
+	text-align: center;
+	font-size: 42px;
+	margin: 0;
+	padding: 0;
+	line-height: 110%;
+	color: #000;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+h2.subheading {color: #333;font-size: 38px;margin-bottom: 20px;}
+h2.subheading span {color: #a8a8a8;}
+
+ul.left,
+ul.right,
+ul.icon,
+ul.icon li,
+ul.left li,
+ul.right li {
+	list-style: none;
+	line-height: 150%;
+	font-size: 12px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	margin-bottom: 20px;
+	margin-top: 10px;
+	color: #575757;
+}
+ul.icon span,
+ul.right span,
+ul.left span {
+	display: block;
+	padding-left: 30px;
+	color: #000;
+	font: bold 16px/27px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+li.info {
+	background: url(./images/icons/info.png) no-repeat left 2px;
+}
+li.star {
+	background: url(./images/icons/star.png) no-repeat left 2px;
+}
+li.idea {
+	background: url(./images/icons/lightbulb.png) no-repeat left 2px;
+}
+li.search {
+	background: url(./images/icons/search.png) no-repeat left 2px;
+}
+li.warn {
+	background: url(./images/icons/warning.png) no-repeat left 2px;
+}
+
+li.accept {
+	background: url(./images/icons/accept.png) no-repeat left 2px;
+}
+
+li.cd {
+	background: url(./images/icons/cd.png) no-repeat left 2px;
+}
+
+li.coffee {
+	background: url(./images/icons/coffee.png) no-repeat left 2px;	
+}
+
+
+li.email {
+	background: url(./images/icons/email.png) no-repeat left 2px;
+}
+
+li.download {
+	background: url(./images/icons/info.png) no-repeat left 2px;
+}
+
+li.photo {
+	background: url(./images/icons/photo_credit.png) no-repeat left 2px;
+}
+
+
+li.secure {
+	background: url(./images/icons/protected.png) no-repeat left 2px;
+}
+
+
+li.author {
+	background: url(./images/icons/readmore.png) no-repeat left 2px;
+}
+
+
+li.mycomment {
+	background: url(./images/icons/speech_bubble_gloss.png) no-repeat left 2px;
+}
+
+li.time {
+	background: url(./images/icons/time.png) no-repeat left 2px;
+}
+
+.cta {
+	margin: 0px auto 20px auto;
+	padding: 10px 10px 20px 10px;
+	background-color: #f8f8f8;
+	border: 1px solid #d0d0d0;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	clear: both;
+}
+.cta p {
+	margin: 0;
+	padding: 0;
+}
+.cta h3 {
+	font-size: 16px;
+}
+
+/* Layout Shortcodes */
+.full-width {width:960px; height:auto; overflow:hidden}
+
+.one_half { width: 48%; }
+.one_third { width: 30.66%; }
+.two_thirds { width: 65.33%; }
+.one_fourth { width: 22%; }
+.three_fourths { width: 74%; }
+.one_fifth { width: 16.8%; }
+.two_fifth { width: 37.6%; }
+.three_fifth { width: 58.4%; }
+.four_fifth { width: 67.2%; }
+.one_sixth { width: 13.33%; }
+.five_sixth { width: 82.67%; }
+
+.one_half,
+.one_third,
+.two_thirds,
+.three_fourths,
+.one_fourth,
+.one_fifth,
+.two_fifth,
+.three_fifth,
+.four_fifth,
+.one_sixth,
+.five_sixth {
+	position: relative;
+	margin-right: 4%;
+	margin-bottom: 20px;
+	float: left;
+}
+
+
+.last {margin-right:0 !important;}
+.clearfix {clear:both;}.clearfix:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+
+a.more-link {
+	font-size: 1em;
+	margin: 10px 0px;
+	padding: .3em .7em .3em 2em;
+	text-decoration: none;
+	font-weight: bold;
+	float: right;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+a.more-link {
+	border: 1px solid #f1f1f1;
+	background: #f5f5f5 url(./images/icons/list-arrow.png) no-repeat .55em .65em;
+}
+a.more-link:hover {
+	background-color: #f1f1f1;
+}
+
+#mce_slider_full {
+	display: block;
+	background-color: #f4f4f4;
+	border: 2px dashed #ccc;
+	height: 100px;
+	width: 90%;
+	margin:10px auto;
+	padding: 20px;
+	text-align: center;
+}
+
+/* @group Bonus Styles */
+
+/* @group Staff Directory */
+
+ul.staff_social {
+	float: left;
+	width: 100%;
+	padding: 5px 0px;
+	margin: 0;
+	border: 1px solid #eee;
+	border-left: 0px none;
+	border-right: 0px none;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	list-style: none;
+}
+ul.staff_social li {
+	margin: 0;
+	padding: 0;
+	float: left;
+	background-image: none;
+}
+ul.staff_social li a {
+	line-height: 24px;
+	padding: 0 10px 0 24px;
+	display: block;
+	text-decoration: none;
+}
+ul.staff_social li a.facebook {
+	background: url(./images/icons/widget_facebook.png) no-repeat left center;
+}
+ul.staff_social li a.linkedin {
+	background: url(./images/icons/widget_linkedin.png) no-repeat left center;
+}
+ul.staff_social li a.twitter {
+	background: url(./images/icons/widget_twitter.png) no-repeat left center;
+}
+ul.staff_social li a.email {
+	background: url(./images/icons/page_edit.png) no-repeat left center;
+}
+
+
+/* @end */
+div.note {
+	text-align: left;
+	padding: 10px 10px 10px 48px;
+	border: 2px solid;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	margin: 15px 0px 15px 0px;
+	line-height: 150%;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	font-size: 14px;
+}
+
+div.note a {
+	text-decoration: underline;
+}
+
+div.note a:hover {
+	text-decoration: none;
+}
+
+div.alert {
+	background: #cb0003 url(./images/icons/alert.png) no-repeat 10px 50%;
+	border-color: #ff0004;
+	color: #f8ff00;
+    box-shadow: 1px 1px 0 #c80003 inset, -1px -1px 0 #c80003 inset;
+    -moz-box-shadow: 1px 1px 0 #c80003 inset, -1px -1px 0 #c80003 inset;
+    -webkit-box-shadow: 1px 1px 0 #c80003 inset, -1px -1px 0 #c80003 inset;
+	text-shadow: #5d0001 1px 1px 0;
+
+}
+
+div.alert a {
+	color: #fff;
+}
+
+div.info {
+	background: #d2e5ff url(./images/icons/info.png) no-repeat 10px 50%;
+	border-color: #9ebbe1;
+	color: #444851;
+	text-shadow: #f4f8ff 1px 1px 0;
+    box-shadow: 1px 1px 0 #eff6ff inset, -1px -1px 0 #eff6ff inset;
+    -moz-box-shadow: 1px 1px 0 #eff6ff inset, -1px -1px 0 #eff6ff inset;
+    -webkit-box-shadow: 1px 1px 0 #eff6ff inset, -1px -1px 0 #eff6ff inset;
+}
+
+
+
+div.info a {
+	color: #1a7bbf;
+}
+
+div.warn {
+	background: #ffd758 url(./images/icons/warning.png) no-repeat 10px 50%;
+	border-color: #ffb30a;
+	color: #4f3b0e;
+    box-shadow: 1px 1px 0 #fff5d6 inset, -1px -1px 0 #fff5d6 inset;
+    -moz-box-shadow: 1px 1px 0 #fff5d6 inset, -1px -1px 0 #fff5d6 inset;
+    -webkit-box-shadow: 1px 1px 0 #fff5d6 inset, -1px -1px 0 #fff5d6 inset;
+	text-shadow: #fff0c0 1px 1px 0;
+}
+
+div.warn a {
+	color: #c44800;
+	text-shadow: none;
+}
+
+div.accept {
+	background: #b3de7e url(./images/icons/accept.png) no-repeat 10px 50%;
+	border-color: #3a9805;
+	color: #173d08;
+	text-shadow: #cdf49e 1px 1px 0;
+    -moz-box-shadow: 1px 1px 0 #a3e256 inset, -1px -1px 0 #a3e256 inset;
+    -webkit-box-shadow: 1px 1px 0 #fff5d6 inset, -1px -1px 0 #fff5d6 inset;
+}
+
+div.accept a {
+	color: #256700;
+}
+
+div.email {
+	background: #f7f7f7 url(./images/icons/email.png) no-repeat 10px 50%;
+	border-color: #deb600;
+	color: #3e3e3e;
+}
+
+div.email a {
+	color: #988217;
+}
+
+div.download {
+	background: #67882e url(./images/icons/file_download.png) no-repeat 10px 50%;
+	border-color: #88b140;
+	color: #f6f2e7;
+}
+
+div.download a {
+	color: #b3d27c;
+}
+
+div.idea {
+	background: #fdfbb9 url(./images/icons/lightbulb.png) no-repeat 10px 50%;
+	border-color: #d0a21e;
+	color: #000;
+    -moz-box-shadow: 1px 1px 0 #fff inset, -1px -1px 0 #fff inset;
+    -webkit-box-shadow: 1px 1px 0 #fff inset, -1px -1px 0 #fff inset;
+	text-shadow: #fdfced 1px 1px 0;
+
+}
+
+div.idea a {
+}
+
+p.small {
+	font-size: .85em;
+	color: #747474;
+}
+
+p.small span.accent {
+	font-size: 1.2em;
+	line-height: 150%;
+	font-weight: bold;
+	font-family: arial,helvetica,sans-serif;
+	color: #585858;
+	text-shadow: #fff 1px 1px 0;
+}
+
+/* @end */
+
+
